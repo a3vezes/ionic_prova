@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-menu-button menu="menuId"></ion-menu-button>
+      </ion-buttons>
+
+    <ion-title>Visão Mensal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+    <ion-item>        
+        <ion-label>Mês</ion-label>
+        <ion-label>Total</ion-label>
+    </ion-item>
+  <ion-item *ngFor="let m of listaMes">
+    <ion-label>{{m.nome}}</ion-label>
+    <ion-label>R${{m.total}}</ion-label>
+
+  </ion-item>
+</ion-list>
+</ion-content>

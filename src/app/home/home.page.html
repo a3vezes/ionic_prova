@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+
+      <ion-buttons slot="start">
+          <ion-menu-button menu="menuId"></ion-menu-button>
+        </ion-buttons>
+   
+    <ion-title>Gestor Financeiro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-text color="dark">
+      <h1>Visão Geral</h1>
+    </ion-text>
+    <br>
+    <br>
+    <ion-text color="dark" *ngIf="categorias.length > 0">
+      <h2>Gastos Nas Catégorias</h2>
+      <ion-list>
+          <ion-item>        
+              <ion-label>Catégoria</ion-label>
+              <ion-label>Total</ion-label>              
+          </ion-item>
+        <ion-item *ngFor="let c of categorias">
+          <ion-label>{{c.nome}}</ion-label>
+          <ion-label>R${{c.total}}</ion-label>
+      
+        </ion-item>
+      </ion-list>
+    </ion-text>
+    <h3 *ngIf="ultimo.length == 0">Nenhum Gasto Cadastrado!</h3>
+
+    <ion-text color="dark" *ngIf="ultimo.length > 0" >
+        <h2 id="ultima">Último gasto cadastrado {{ultimo[0].nome}} no valor de R$ {{ultimo[0].preco}} em {{ultimo[0].mes}}.</h2>
+      </ion-text>    
+
+      <ion-text color="dark">
+        <h1>Incluir Gasto</h1>
+      </ion-text>
+      <ion-button (click)="incluir()" color="dark">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+</ion-content>

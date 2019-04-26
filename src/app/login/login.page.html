@@ -1,0 +1,34 @@
+<ion-content padding>
+  <ion-button id="titulo" expand="full" color="dark">
+    Gerenciador Financeiro
+  </ion-button>
+    <!-- FORMULÁRIO -->
+    <form [formGroup]="formulario">
+      <ion-list>
+          <!-- EMAIL -->
+          <ion-item>
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <!-- SENHA -->
+          <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input type="password" formControlName="senha"></ion-input>
+          </ion-item>
+      </ion-list>
+      
+      <!-- LOGAR -->
+      <ion-button id="login" expand="full" color="dark" fill="solid" (click)="logar()"> 
+          Log In 
+      </ion-button> 
+    </form>
+  
+    <div id="ou">
+      <p>Ou</p>
+    </div>
+  
+    <!-- CADASTRAR -->
+    <p id="cadastre-se" (click)="cadastrar()">Clique aqui para cadastrar-se</p>
+  
+  </ion-content>
+  
